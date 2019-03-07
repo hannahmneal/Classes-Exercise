@@ -9,14 +9,10 @@ namespace Company
                     - Date founded (DateTime)
                     - Company name (string)
                     - Employees (List<Employee>)
-
-        The Company class should also have a ListEmployees() method which outputs the name of each employee to the console.
      */
 
     public class Company
     {
-
-        // Some readonly properties (let's talk about gets, baby)
         public string CompanyName { get; set; } = "";
         public DateTime CreatedOn { get; set; }
 
@@ -29,17 +25,24 @@ namespace Company
 
             The constructor will set the value of the public properties
         */
-        public List<string> Employee { get; set; }
+        public Company(string argCompanyName, DateTime argCreatedOn) {
 
-        public void ListEmployees()
-        {
-
-        }
-
-        //constructor method to set the value of the public props:
-        public Company(Company CompanyName, Company CreatedOn)
-        {
+            CompanyName = argCompanyName;
+            CreatedOn = argCreatedOn;
+            
             Console.WriteLine($"{CompanyName} was founded on {CreatedOn}");
         }
+        public List<string> Employee { get; set; }
+
+
+        /*
+            The Company class should also have a ListEmployees() method which outputs the name of each employee to the console.
+        */
+
+        // public ListEmployees()
+        // {
+
+        // }
+
     }
 }
