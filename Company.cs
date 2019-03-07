@@ -1,7 +1,7 @@
 using System;
-// using System.Collections.Generic;
+using System.Collections.Generic;
 
-namespace Companies
+namespace Program
 {
 
     /*
@@ -13,11 +13,7 @@ namespace Companies
 
     public class Company
     {
-        public string CompanyName { get; set; } = "";
-        public DateTime CreatedOn { get; set; }
-
         // Constructor: A constructor is a special method in a class that is called when a new class is instantiated. It ensures that the new object is set up and ready for use immediately after it is created.
-
         /*
             Create a constructor method that accepts two arguments:
                 1. The name of the company
@@ -29,15 +25,28 @@ namespace Companies
 
             CompanyName = argCompanyName;
             CreatedOn = argCreatedOn;
-
-            Console.WriteLine($"{CompanyName} was founded on {CreatedOn}");
+            Worker = new List<Employee>();
         }
+        public string CompanyName { get; set; } = "";
+        public DateTime CreatedOn { get; set; }
+
+        public List<Employee> Worker {get; set;}
 
         /*
             The Company class should also have a ListEmployees() method which outputs the name of each employee to the console.
-
         */
+        public void ListEmployees() {
 
+            foreach (Employee hired in Worker) {
+                Console.WriteLine($"{hired.EmployeeFirstName} {hired.EmployeeLastName} has worked at {CompanyName} as a {hired.EmployeeTitle} since {hired.StartDate}");
+            }
+        }
+
+        public void CompanyInfo() {
+            Console.WriteLine($"{CompanyName} was founded on {CreatedOn}");
+        }
     }
+
 }
+
 
