@@ -1,5 +1,4 @@
 ﻿using System;
-using Employees;
 
 namespace Program
 {
@@ -25,11 +24,10 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Create an instance of a company. Name it whatever you like.
 
         // Create three employees
 
-        Employee employee1 = new Employee("Harry", "Potter", "Wizard", new DateTime(2019, 3, 6));
+         Employee employee1 = new Employee("Harry", "Potter", "Wizard", new DateTime(2019, 3, 6));
 
         /*
 
@@ -37,7 +35,7 @@ class Program
             employee1.EmployeeLastName = "Potter";
             employee1.EmployeeTitle = "Wizard";
             employee1.StartDate = new DateTime(2019, 3, 6);
-        
+
             This commented block also works here if used in conjunction with the following constructor in Employee.cs:
 
             public Employee() {
@@ -50,7 +48,18 @@ class Program
 
         Employee employee3 = new Employee("Hannah", "Neal", "Software Developer", new DateTime(2018, 11, 12));
 
+        // Create an instance of a company. Name it whatever you like.
+
+         Company business1 = new Company("Startup", new DateTime(2017, 1, 13));
+
         // Assign the employees to the company
+
+         business1.Worker.Add(employee1);
+         business1.Worker.Add(employee2);
+         business1.Worker.Add(employee3);
+
+        business1.ListEmployees();
+        business1.CompanyInfo();
 
         /*
             Iterate the company's employee list and generate the
@@ -58,5 +67,4 @@ class Program
         */
     }
 }
-
 }

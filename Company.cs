@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Company
+namespace Program
 {
 
     /*
@@ -9,19 +9,11 @@ namespace Company
                     - Date founded (DateTime)
                     - Company name (string)
                     - Employees (List<Employee>)
-
-        The Company class should also have a ListEmployees() method which outputs the name of each employee to the console.
      */
 
     public class Company
     {
-
-        // Some readonly properties (let's talk about gets, baby)
-        public string CompanyName { get; set; } = "";
-        public DateTime CreatedOn { get; set; }
-
         // Constructor: A constructor is a special method in a class that is called when a new class is instantiated. It ensures that the new object is set up and ready for use immediately after it is created.
-
         /*
             Create a constructor method that accepts two arguments:
                 1. The name of the company
@@ -29,17 +21,32 @@ namespace Company
 
             The constructor will set the value of the public properties
         */
-        public List<string> Employee { get; set; }
+        public Company(string argCompanyName, DateTime argCreatedOn) {
 
-        public void ListEmployees()
-        {
+            CompanyName = argCompanyName;
+            CreatedOn = argCreatedOn;
+            Worker = new List<Employee>();
+        }
+        public string CompanyName { get; set; } = "";
+        public DateTime CreatedOn { get; set; }
 
+        public List<Employee> Worker {get; set;}
+
+        /*
+            The Company class should also have a ListEmployees() method which outputs the name of each employee to the console.
+        */
+        public void ListEmployees() {
+
+            foreach (Employee hired in Worker) {
+                Console.WriteLine($"{hired.EmployeeFirstName} {hired.EmployeeLastName} has worked at {CompanyName} as a {hired.EmployeeTitle} since {hired.StartDate}");
+            }
         }
 
-        //constructor method to set the value of the public props:
-        public Company(Company CompanyName, Company CreatedOn)
-        {
+        public void CompanyInfo() {
             Console.WriteLine($"{CompanyName} was founded on {CreatedOn}");
         }
     }
+
 }
+
+
