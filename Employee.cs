@@ -32,6 +32,9 @@ public class Employee {
                 The "Employee()" constructor is called in Program.cs to create a new instance of an employee. The employee details are defined here and passed into Employee() as arguments.
              */
         }
+        public void ListEmployees() {
+            Console.WriteLine($"{EmployeeFirstName}, {EmployeeLastName}");
+        }
 
     }
 

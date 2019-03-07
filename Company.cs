@@ -1,7 +1,7 @@
 using System;
-using System.Collections.Generic;
+// using System.Collections.Generic;
 
-namespace Company
+namespace Companies
 {
 
     /*
@@ -29,20 +29,15 @@ namespace Company
 
             CompanyName = argCompanyName;
             CreatedOn = argCreatedOn;
-            
+
             Console.WriteLine($"{CompanyName} was founded on {CreatedOn}");
         }
-        public List<string> Employee { get; set; }
-
 
         /*
             The Company class should also have a ListEmployees() method which outputs the name of each employee to the console.
+
         */
-
-        // public ListEmployees()
-        // {
-
-        // }
 
     }
 }
+

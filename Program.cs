@@ -1,4 +1,5 @@
 ﻿using System;
+using Companies;
 using Employees;
 
 namespace Program
@@ -37,7 +38,7 @@ class Program
             employee1.EmployeeLastName = "Potter";
             employee1.EmployeeTitle = "Wizard";
             employee1.StartDate = new DateTime(2019, 3, 6);
-        
+
             This commented block also works here if used in conjunction with the following constructor in Employee.cs:
 
             public Employee() {
@@ -56,6 +57,8 @@ class Program
             Iterate the company's employee list and generate the
             simple report shown above
         */
+
+        Company business1 = new Company("Startup", new DateTime(2017, 1, 13));
     }
 }
 
